@@ -1,0 +1,57 @@
+### Create User
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+    "email": "test2@example.com",
+    "password": "randomStrongp@ssword123"
+}
+
+### Login
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+    "email": "test2@example.com",
+    "password": "randomStrongp@ssword123"
+}
+
+### Get User
+GET http://localhost:3001/users
+
+################################################################################################
+
+### Create Reservation
+POST http://localhost:3000/reservations
+Content-Type: application/json
+
+{
+    "startDate": "12/20/2022",
+    "endDate": "12/25/2022",
+    "charge": {
+        "card": {
+            "cvc": "413",
+            "exp_month": 12,
+            "exp_year": 2027,
+            "number": "4242 4242 4242 4242"
+        },
+        "amount": 50
+    }
+}
+
+### Get all Reservations
+GET http://localhost:3000/reservations
+
+### Get Reservation by id
+GET http://localhost:3000/reservations/6571050790fc591c93135cf1
+
+### Update Reservation
+PATCH http://localhost:3000/reservations/6571050790fc591c93135cf1
+Content-Type: application/json
+
+{
+    "startDate": "12/22/2022"
+}
+
+### Delete Reservation
+DELETE  http://localhost:3000/reservations/6571050790fc591c93135cf1
